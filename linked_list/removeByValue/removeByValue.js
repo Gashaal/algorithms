@@ -1,4 +1,4 @@
-const { ListNode } = require('./../singly_linked_list');
+const ListNode = require('../singleLinkedList/listNode');
 
 function removeElements(head, val) {
     if (head instanceof ListNode) {

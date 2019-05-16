@@ -1,4 +1,4 @@
-const { ListNode } = require('./../singly_linked_list');
+const ListNode = require('../singleLinkedList/listNode');
 
 function reverseList(head) {
     let pointerPrev = null;
@@ -17,6 +17,5 @@ function reverseList(head) {
 
     return pointerPrev
 }
-
 
 module.exports = reverseList;
