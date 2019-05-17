@@ -1,12 +1,5 @@
 const ListNode = require('../singleLinkedList/listNode');
 
-// ListNode odd = head, even = head.next, evenHead = even;
-// while (even != null && even.next != null) {
-//     odd.next = even.next;
-//     odd = odd.next;
-//     even.next = odd.next;
-//     even = even.next;
-// }
 
 function oddEvenList(head) {
     if (head instanceof ListNode) {
@@ -16,8 +9,12 @@ function oddEvenList(head) {
 
         while (oddPointer && evenPointer) {
             oddPointer.next = evenPointer.next;
-            oddPointer = oddPointer.next;
-            evenPointer.next = oddPointer.next;
+            if (oddPointer.next) {
+                oddPointer = oddPointer.next;
+            }
+            if (oddPointer) {
+                evenPointer.next = oddPointer.next;
+            }
             evenPointer = evenPointer.next;
         }
 
@@ -25,6 +22,8 @@ function oddEvenList(head) {
 
         return head;
     }
+
+    return null;
 }
 
 module.exports = oddEvenList;
