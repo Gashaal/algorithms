@@ -3,23 +3,37 @@
  * @return {number[]}
  */
 
-//   [
-//     [ 1, 2, 3 ],
-//     [ 4, 5, 6 ],
-//     [ 7, 8, 9 ]
-//   ]
-
 function findDiagonalOrder(matrix) {
-  const order = [];
+  let order = [];
 
-  let i = 0;
-  let j = 0;
-  let direction = -1;
+  if (Array.isArray(matrix) && Array.isArray(matrix[0])) {
+    const temp = [];
+    const x_size = matrix.length;
+    const y_size = matrix[0].length;
 
-  while (i === matrix.length && j === matrix[i].length) {
-    console.log(matrix[i][j]);
+    for (let i = 0; i < x_size; i++) {
+      for (let j = 0; j < y_size; j++) {
+        const item = matrix[i][j];
 
+        if (Array.isArray(temp[i + j])) {
+          temp[i + j].push(item);
+        } else {
+          temp[i + j] = [];
+          temp[i + j].push(item);
+        }
+      }
+    }
+
+    for (let i = 0; i < temp.length; i++) {
+      if (i % 2 === 0) {
+        order = order.concat(temp[i].reverse());
+      } else {
+        order = order.concat(temp[i]);
+      }
+    }
   }
+
+  return order;
 }
 
 module.exports = findDiagonalOrder;

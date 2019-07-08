@@ -1,16 +1,20 @@
-const ListNode = require('./listNode');
+const ListNode = require("./listNode");
 
 function createLinkedList(arr) {
-    const head = new ListNode(arr[0]);
+  let head = null;
+
+  if (Array.isArray(arr) && arr.length) {
+    head = new ListNode(arr[0]);
     let pointer = head;
 
     arr.slice(1).forEach(item => {
-        const node = new ListNode(item);
-        pointer.next = node;
-        pointer = node;
+      const node = new ListNode(item);
+      pointer.next = node;
+      pointer = node;
     });
+  }
 
-    return head;
+  return head;
 }
 
 module.exports = createLinkedList;
