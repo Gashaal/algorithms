@@ -4,8 +4,6 @@ const PrintList = require("../singleLinkedList/PrintList");
 function isPalindrome(head) {
   let isPalindrome = true;
 
-  console.log("---");
-
   if (head instanceof ListNode) {
     let count = 0;
     let pointer = head;
@@ -15,36 +13,37 @@ function isPalindrome(head) {
       pointer = pointer.next;
     }
 
-    const middle = Math.round(count / 2);
-    let pos = 0;
-    pointer = head;
-    let tailPointer = null;
-    let reversePartPointer = null;
+    let middle;
+    if (count % 2 === 0) {
+      middle = count / 2;
+    } else {
+      middle = Math.round(count / 2);
+    }
 
     if (count === 1) {
       return true;
     }
 
+    let pos = 0;
+    pointer = head;
+    let reversePartPointer = null;
+
     while (pos < middle) {
       const temp = pointer.next;
       pointer.next = reversePartPointer;
       reversePartPointer = pointer;
-      prevPointer = pointer;
 
       pos++;
       pointer = temp;
     }
 
+    if (count % 2 !== 0) {
+      reversePartPointer = reversePartPointer.next;
+    }
+
     isPalindrome = true;
-
-    prevPointer.next = pointer;
-    console.log(PrintList(prevPointer));
-    console.log(PrintList(reversePartPointer));
-
     while (reversePartPointer && pointer) {
-      if (pointer.val !== undefined && pointer.val !== reversePartPointer.val) {
-        console.log("ttt");
-        console.log("ttt");
+      if (pointer.val !== reversePartPointer.val) {
         isPalindrome = false;
         break;
       }
