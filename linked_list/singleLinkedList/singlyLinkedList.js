@@ -1,4 +1,4 @@
-const ListNode = require('./listNode');
+const ListNode = require("./listNode");
 
 class MyLinkedList {
     constructor() {
@@ -122,7 +122,7 @@ class MyLinkedList {
                     if (slowIndex < this._length) {
                         slowIndex++;
                     } else {
-                        slowIndex = 0
+                        slowIndex = 0;
                     }
 
                     fastPointer = fastPointer.next.next;
@@ -148,13 +148,13 @@ class MyLinkedList {
  * @return {string}
  */
 function PrintList(head) {
-    let str = '';
+    let str = "";
     let pointer = head;
     while (pointer) {
         str += pointer.val;
         pointer = pointer.next;
         if (pointer) {
-            str += ' -> ';
+            str += " -> ";
         }
     }
 
