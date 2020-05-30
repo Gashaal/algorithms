@@ -26,8 +26,6 @@ function plusOne(digits) {
       resDigits.push(1);
     }
 
-    console.log(resDigits);
-
     return resDigits.reverse();
   } else {
     return [1];

@@ -12,18 +12,18 @@ def merge_sort(arr):
     return merge(left, right)
 
 
-def merge(left, right):
+def merge(nums1, nums2):
     merged_arr = []
 
-    while left and right:
-        if left[0] < right[0]:
-            merged_arr.append(left.pop(0))
+    while nums1 and nums2:
+        if nums1[0] < nums2[0]:
+            merged_arr.append(nums1.pop(0))
         else:
-            merged_arr.append(right.pop(0))
+            merged_arr.append(nums2.pop(0))
 
-    if left:
-        merged_arr.extend(left)
-    if right:
-        merged_arr.extend(right)
+    if nums1:
+        merged_arr.extend(nums1)
+    if nums2:
+        merged_arr.extend(nums2)
 
     return merged_arr
