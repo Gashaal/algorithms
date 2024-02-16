@@ -1,16 +1,18 @@
+// https://leetcode.com/problems/string-to-integer-atoi/description/
+
 function atoi(str) {
   let [sign, f, l, invalid] = [1, -1, 0, false];
 
   for (let i = 0; i < str.length; i++) {
-    if (str[i] === " " && f === -1) {
+    if (str[i] === ' ' && f === -1) {
       continue;
     }
 
-    if (str[i] === "" && f === -1) {
+    if (str[i] === '' && f === -1) {
       continue;
     }
 
-    if (str[i] === "-" && f === -1) {
+    if (str[i] === '-' && f === -1) {
       sign = -1;
       continue;
     }
