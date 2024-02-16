@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/two-sum/description/
+
 function twoSum(nums, target) {
   const map = new Map();
 
@@ -12,21 +14,4 @@ function twoSum(nums, target) {
   }
 }
 
-function binarySearch(nums, n) {
-  if (nums.length === 1 && nums[0] !== n) {
-    return -1;
-  }
-
-  const middle = Math.floor(nums.length - 1 / 2);
-
-  if (nums[middle] === n) {
-    return middle;
-  } else if (nums[middle] > n) {
-    return binarySearch(nums.slice(0, middle), n);
-  } else if (nums[middle] < n) {
-    return binarySearch(nums.slice(middle + 1), n);
-  }
-}
-
-module.exports = binarySearch;
-// module.exports = twoSum;
+module.exports = twoSum;
