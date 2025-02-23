@@ -24,14 +24,6 @@ function fib(N) {
     return prev + prevPrev;
 }
 
-function fib1(N) {
-    if (N <= 1) {
-        return N;
-    }
-
-    return memoize(N);
-}
-
 function memoize(N) {
     const cache = {
         0: 0,
@@ -45,4 +37,4 @@ function memoize(N) {
     return cache[N];
 }
 
-module.exports = fib;
+module.exports = { fib, memoize };
