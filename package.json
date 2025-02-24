@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "test:vitest": "vitest **/*.test.ts"
   },
   "repository": {
     "type": "git",
