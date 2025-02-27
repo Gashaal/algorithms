@@ -2,3 +2,5 @@
 .prettierrc
 node_modules
 .vscode
+.aider*
+.env
