@@ -1,5 +1,9 @@
-function charCounter(str) {
-  const counter = {};
+interface CharCounter {
+  [key: string]: number;
+}
+
+function charCounter(str: string): CharCounter {
+  const counter: CharCounter = {};
 
   for (const char of str) {
     if (char in counter) {
@@ -12,7 +16,7 @@ function charCounter(str) {
   return counter;
 }
 
-function isAnagram(s, t) {
+export function isAnagram(s: string, t: string): boolean {
   const sCounter = charCounter(s);
   const tCounter = charCounter(t);
 
@@ -28,5 +32,3 @@ function isAnagram(s, t) {
 
   return true;
 }
-
-module.exports = isAnagram;
