@@ -19,6 +19,8 @@
   "homepage": "https://github.com/Gashaal/algorithms#readme",
   "devDependencies": {
     "ava": "^6.1.1",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "vitest": "^1.2.2",
+    "@vitest/coverage-c8": "^1.2.2"
   }
 }
