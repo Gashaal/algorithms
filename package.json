@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "ava",
+    "type-check": "tsc",
     "test:vitest": "vitest src/**/*.test.ts"
   },
   "repository": {
@@ -20,7 +21,7 @@
   "devDependencies": {
     "ava": "^6.1.1",
     "prettier": "^3.2.5",
-    "vitest": "^1.2.2",
-    "@vitest/coverage-c8": "^1.2.2"
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.7"
   }
 }
