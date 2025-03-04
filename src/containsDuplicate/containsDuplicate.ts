@@ -1,5 +1,5 @@
-function containsDuplicate(nums) {
-  const counter = {};
+function containsDuplicate(nums: number[]): boolean {
+  const counter: Record<number, number> = {};
 
   for (let i = 0; i < nums.length; i++) {
     if (counter[nums[i]]) {
@@ -12,4 +12,4 @@ function containsDuplicate(nums) {
   return false;
 }
 
-module.exports = containsDuplicate;
+export default containsDuplicate;

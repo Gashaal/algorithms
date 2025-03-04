@@ -1,4 +1,12 @@
-function classNames(...args) {
+type ClassValue = string | number | ClassDictionary | ClassArray | undefined | null | false;
+
+interface ClassDictionary {
+  [id: string]: boolean | undefined | null;
+}
+
+interface ClassArray extends Array<ClassValue> {}
+
+function classNames(...args: ClassValue[]): string {
   if (!args) {
     return '';
   }
@@ -21,7 +29,7 @@ function classNames(...args) {
         if (Array.isArray(a)) {
           return classNames(...a);
         } else {
-          const arr = [];
+          const arr: string[] = [];
 
           for (const [key, value] of Object.entries(a)) {
             if (value) {
@@ -38,4 +46,4 @@ function classNames(...args) {
   return result.length ? result.join(' ') : '';
 }
 
-module.exports = classNames;
+export default classNames;

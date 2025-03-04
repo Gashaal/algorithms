@@ -1,10 +1,10 @@
-function countCharacters(words, chars) {
+function countCharacters(words: string[], chars: string): number {
   let res = 0;
   
-  function charsCount(str) {
-    const charsMap = {};
+  function charsCount(str: string): Record<string, number> {
+    const charsMap: Record<string, number> = {};
 
-    for (let char of str) {
+    for (const char of str) {
       if (charsMap[char]) {
         charsMap[char] += 1;
       } else {
@@ -17,11 +17,11 @@ function countCharacters(words, chars) {
 
   const charsMap = charsCount(chars);
 
-  for (let word of words) {
+  for (const word of words) {
     let charCounter = word.length;
     const temp = {...charsMap};
 
-    for (let s of word) {
+    for (const s of word) {
       if (temp[s]) {
         temp[s]--;
         charCounter--;
@@ -36,4 +36,4 @@ function countCharacters(words, chars) {
   return res;
 }
 
-module.exports = countCharacters;
+export default countCharacters;
