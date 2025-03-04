@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ava",
+    "test": "vitest src/**/*.test.ts",
     "type-check": "tsc",
-    "test:vitest": "vitest src/**/*.test.ts"
+    "test:type-check": "tsc --noEmit && vitest src/**/*.test.ts",
+    "test:ava": "ava"
   },
   "repository": {
     "type": "git",

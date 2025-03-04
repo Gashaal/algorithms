@@ -3,17 +3,17 @@
  * @return {number[]}
  */
 
-function findDiagonalOrder(matrix) {
-  let order = [];
+export function findDiagonalOrder(matrix: number[][]): number[] {
+  let order: number[] = [];
 
   if (Array.isArray(matrix) && Array.isArray(matrix[0])) {
-    const temp = [];
-    const x_size = matrix.length;
-    const y_size = matrix[0].length;
+    const temp: number[][] = [];
+    const x_size: number = matrix.length;
+    const y_size: number = matrix[0].length;
 
     for (let i = 0; i < x_size; i++) {
       for (let j = 0; j < y_size; j++) {
-        const item = matrix[i][j];
+        const item: number = matrix[i][j];
 
         if (Array.isArray(temp[i + j])) {
           temp[i + j].push(item);
@@ -35,5 +35,3 @@ function findDiagonalOrder(matrix) {
 
   return order;
 }
-
-module.exports = findDiagonalOrder;
